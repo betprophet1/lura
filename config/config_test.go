@@ -37,6 +37,8 @@ func TestConfig_initBackendURLMappings_ok(t *testing.T) {
 	samples := []string{
 		"supu/{tupu}",
 		"/supu/{tupu1}",
+		"/supu/*path",
+		"/supu/{key}/*abc",
 		"/supu.local/",
 		"supu/{tupu_56}/{supu-5t6}?a={foo}&b={foo}",
 		"supu/{tupu_56}{supu-5t6}?a={foo}&b={foo}",
@@ -48,6 +50,8 @@ func TestConfig_initBackendURLMappings_ok(t *testing.T) {
 	expected := []string{
 		"/supu/{{.Tupu}}",
 		"/supu/{{.Tupu1}}",
+		"/supu/{{.Path}}",
+		"/supu/{{.Key}}/{{.Abc}}",
 		"/supu.local/",
 		"/supu/{{.Tupu_56}}/{{.Supu-5t6}}?a={{.Foo}}&b={{.Foo}}",
 		"/supu/{{.Tupu_56}}{{.Supu-5t6}}?a={{.Foo}}&b={{.Foo}}",
@@ -61,9 +65,12 @@ func TestConfig_initBackendURLMappings_ok(t *testing.T) {
 	subject := ServiceConfig{Endpoints: []*EndpointConfig{&endpoint}, uriParser: NewURIParser()}
 
 	inputSet := map[string]interface{}{
+		"path":     nil,
 		"tupu":     nil,
 		"tupu1":    nil,
 		"tupu_56":  nil,
+		"key":      nil,
+		"abc":      nil,
 		"supu-5t6": nil,
 		"foo":      nil,
 	}
@@ -122,12 +129,39 @@ func TestConfig_init(t *testing.T) {
 	supuBackend := Backend{
 		URLPattern: "/__debug/supu",
 	}
+
 	supuEndpoint := EndpointConfig{
 		Endpoint:       "/supu",
 		Method:         "post",
 		Timeout:        1500 * time.Millisecond,
 		CacheTTL:       6 * time.Hour,
 		Backend:        []*Backend{&supuBackend},
+		OutputEncoding: "some_render",
+	}
+
+	supuWildcardBackend := Backend{
+		URLPattern: "/__debug/supu/{path}",
+	}
+
+	supuWildcard2Backend := Backend{
+		URLPattern: "/__debug/supu/{path}",
+	}
+
+	supuWildcardEndpoint := EndpointConfig{
+		Endpoint:       "/supu/*path",
+		Method:         "post",
+		Timeout:        1500 * time.Millisecond,
+		CacheTTL:       6 * time.Hour,
+		Backend:        []*Backend{&supuWildcardBackend},
+		OutputEncoding: "some_render",
+	}
+
+	supuWildcard2Endpoint := EndpointConfig{
+		Endpoint:       "/supu/{key}/*path",
+		Method:         "post",
+		Timeout:        1500 * time.Millisecond,
+		CacheTTL:       6 * time.Hour,
+		Backend:        []*Backend{&supuWildcard2Backend},
 		OutputEncoding: "some_render",
 	}
 
@@ -169,7 +203,7 @@ func TestConfig_init(t *testing.T) {
 		Timeout:   5 * time.Second,
 		CacheTTL:  30 * time.Minute,
 		Host:      []string{"http://127.0.0.1:8080"},
-		Endpoints: []*EndpointConfig{&supuEndpoint, &githubEndpoint, &userEndpoint},
+		Endpoints: []*EndpointConfig{&supuEndpoint, &supuWildcardEndpoint, &githubEndpoint, &userEndpoint, &supuWildcard2Endpoint},
 	}
 
 	if err := subject.Init(); err != nil {
@@ -207,7 +241,7 @@ func TestConfig_init(t *testing.T) {
 		t.Error(err.Error())
 	}
 
-	if hash != "epN+iT6kaZ2pyNN5KYeVl+nPHUWHk14pfDUcg+5xMXw=" {
+	if hash != "W4xBceo4BdUE3h1sO+t22YAtiUVnP56/TbwhcJndt78=" {
 		t.Errorf("unexpected hash: %s", hash)
 	}
 }
@@ -300,6 +334,30 @@ func TestConfig_initKOInvalidDebugPattern(t *testing.T) {
 	}
 
 	debugPattern = dp
+}
+
+func TestConfig_initKOInvalidWildcarPattern(t *testing.T) {
+	subject := ServiceConfig{
+		Version: ConfigVersion,
+		Host:    []string{"http://127.0.0.1:8080"},
+		Endpoints: []*EndpointConfig{
+			{
+				Endpoint: "/trade/test/*supu/{key}",
+				// Endpoint: "/*supu",
+				Method: "GET",
+				Backend: []*Backend{
+					{
+						URLPattern: "/test",
+					},
+				},
+			},
+		},
+	}
+
+	if err := subject.Init(); err == nil ||
+		err.Error() != "ERROR: parsing the endpoint url 'GET /trade/test/*supu/{key}': wild card must be at the end of path. Ignoring" {
+		t.Error("Expecting an error at the configuration init!", err)
+	}
 }
 
 func TestDefaultConfigGetter(t *testing.T) {

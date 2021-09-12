@@ -277,6 +277,7 @@ var ConfigGetters = map[string]ConfigGetter{defaultNamespace: DefaultConfigGette
 
 var (
 	simpleURLKeysPattern    = regexp.MustCompile(`\{([a-zA-Z\-_0-9\.]+)\}`)
+	wildcardURLPattern      = regexp.MustCompile(`\*([a-zA-Z\-_0-9\.]+)`)
 	sequentialParamsPattern = regexp.MustCompile(`^(resp[\d]+_.*)?(JWT\.([\w\-\.]*))?$`)
 	debugPattern            = "^[^/]|/__debug(/.*)?$"
 	errInvalidHost          = errors.New("invalid host")
@@ -349,6 +350,11 @@ func (s *ServiceConfig) initEndpoints() error {
 		inputSet := map[string]interface{}{}
 		for ip := range inputParams {
 			inputSet[inputParams[ip]] = nil
+		}
+
+		wildcardParams := s.extractPlaceHoldersFromURLTemplate(e.Endpoint, endpointURLWildcardPattern)
+		for ip := range wildcardParams {
+			inputSet[wildcardParams[ip]] = nil
 		}
 
 		e.Endpoint = s.uriParser.GetEndpointPath(e.Endpoint, inputParams)
@@ -444,6 +450,8 @@ func (s *ServiceConfig) initBackendURLMappings(e, b int, inputParams map[string]
 	backend.URLPattern = s.uriParser.CleanPath(backend.URLPattern)
 
 	outputParams, outputSetSize := uniqueOutput(s.extractPlaceHoldersFromURLTemplate(backend.URLPattern, simpleURLKeysPattern))
+	wildcardParams := s.extractPlaceHoldersFromURLTemplate(backend.URLPattern, wildcardURLPattern)
+	outputParams = append(outputParams, wildcardParams...)
 
 	ip := fromSetToSortedSlice(inputParams)
 
@@ -473,6 +481,7 @@ func (s *ServiceConfig) initBackendURLMappings(e, b int, inputParams map[string]
 		}
 		key := strings.Title(output[:1]) + output[1:]
 		backend.URLPattern = strings.Replace(backend.URLPattern, "{"+output+"}", "{{."+key+"}}", -1)
+		backend.URLPattern = strings.Replace(backend.URLPattern, "*"+output, "{{."+key+"}}", -1)
 		backend.URLKeys = append(backend.URLKeys, key)
 	}
 	return nil
@@ -518,6 +527,27 @@ func (e *EndpointConfig) validate() error {
 	}
 	if matched {
 		return &EndpointPathError{Path: e.Endpoint, Method: e.Method}
+	}
+
+	wcMatches := wildcardURLPattern.FindAllStringSubmatchIndex(e.Endpoint, -1)
+	if len(wcMatches) > 1 {
+		return &EndpointMatchError{
+			Err:    errors.New("no more than 1 wildcard"),
+			Path:   e.Endpoint,
+			Method: e.Method,
+		}
+	}
+
+	// if wcMatches != nil {
+	// 	log.Println(wcMatches[0], len(e.Endpoint), e.Endpoint)
+	// }
+
+	if len(wcMatches) == 1 && wcMatches[0][1] != len(e.Endpoint) {
+		return &EndpointMatchError{
+			Err:    errors.New("wild card must be at the end of path"),
+			Path:   e.Endpoint,
+			Method: e.Method,
+		}
 	}
 
 	if len(e.Backend) == 0 {
