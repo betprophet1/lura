@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/luraproject/lura/config"
+	"github.com/badboyd/lura/config"
 )
 
 func TestEntityFormatterFunc(t *testing.T) {

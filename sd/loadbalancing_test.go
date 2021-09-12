@@ -7,7 +7,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/luraproject/lura/config"
+	"github.com/badboyd/lura/config"
 )
 
 func TestRoundRobinLB(t *testing.T) {

@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/encoding"
-	"github.com/luraproject/lura/transport/http/client"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/encoding"
+	"github.com/badboyd/lura/transport/http/client"
 )
 
 var httpProxy = CustomHTTPProxyFactory(client.NewHTTPClient)

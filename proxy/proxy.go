@@ -8,7 +8,7 @@ import (
 	"errors"
 	"io"
 
-	"github.com/luraproject/lura/config"
+	"github.com/badboyd/lura/config"
 )
 
 // Namespace to be used in extra config

@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/logging"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/logging"
 )
 
 var (

@@ -4,7 +4,7 @@
 package register
 
 import (
-	"github.com/luraproject/lura/register/internal"
+	"github.com/badboyd/lura/register/internal"
 )
 
 func New() *Namespaced {

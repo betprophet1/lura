@@ -1,3 +1,4 @@
+//go:build integration || !race
 // +build integration !race
 
 // SPDX-License-Identifier: Apache-2.0
@@ -21,14 +22,14 @@ import (
 
 	"github.com/urfave/negroni"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/logging"
-	"github.com/luraproject/lura/proxy"
-	"github.com/luraproject/lura/router/chi"
-	"github.com/luraproject/lura/router/gin"
-	"github.com/luraproject/lura/router/gorilla"
-	"github.com/luraproject/lura/router/httptreemux"
-	luranegroni "github.com/luraproject/lura/router/negroni"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/logging"
+	"github.com/badboyd/lura/proxy"
+	"github.com/badboyd/lura/router/chi"
+	"github.com/badboyd/lura/router/gin"
+	"github.com/badboyd/lura/router/gorilla"
+	"github.com/badboyd/lura/router/httptreemux"
+	luranegroni "github.com/badboyd/lura/router/negroni"
 )
 
 func TestKrakenD_ginRouter(t *testing.T) {

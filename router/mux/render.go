@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/encoding"
-	"github.com/luraproject/lura/proxy"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/encoding"
+	"github.com/badboyd/lura/proxy"
 )
 
 // Render defines the signature of the functions to be use for the final response

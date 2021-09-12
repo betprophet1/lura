@@ -8,9 +8,9 @@ import (
 	"plugin"
 	"strings"
 
-	"github.com/luraproject/lura/logging"
-	luraplugin "github.com/luraproject/lura/plugin"
-	"github.com/luraproject/lura/register"
+	"github.com/badboyd/lura/logging"
+	luraplugin "github.com/badboyd/lura/plugin"
+	"github.com/badboyd/lura/register"
 )
 
 const (

@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/proxy"
+	"github.com/badboyd/lura/router/mux"
 	"github.com/go-chi/chi"
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/proxy"
-	"github.com/luraproject/lura/router/mux"
 )
 
 // HandlerFactory creates a handler function that adapts the chi router with the injected proxy

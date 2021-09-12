@@ -1,3 +1,4 @@
+//go:build integration || !race
 // +build integration !race
 
 // SPDX-License-Identifier: Apache-2.0
@@ -12,8 +13,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/logging"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/logging"
 )
 
 func TestLoadWithLogger(t *testing.T) {

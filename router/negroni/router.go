@@ -9,11 +9,11 @@ import (
 	gorilla "github.com/gorilla/mux"
 	"github.com/urfave/negroni"
 
-	"github.com/luraproject/lura/logging"
-	"github.com/luraproject/lura/proxy"
-	"github.com/luraproject/lura/router"
-	luragorilla "github.com/luraproject/lura/router/gorilla"
-	"github.com/luraproject/lura/router/mux"
+	"github.com/badboyd/lura/logging"
+	"github.com/badboyd/lura/proxy"
+	"github.com/badboyd/lura/router"
+	luragorilla "github.com/badboyd/lura/router/gorilla"
+	"github.com/badboyd/lura/router/mux"
 )
 
 // DefaultFactory returns a net/http mux router factory with the injected proxy factory and logger

@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/sd/dnssrv"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/sd/dnssrv"
 )
 
 func TestNewLoadBalancedMiddleware_ok(t *testing.T) {

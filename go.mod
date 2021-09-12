@@ -1,4 +1,4 @@
-module github.com/luraproject/lura
+module github.com/badboyd/lura
 
 go 1.13
 

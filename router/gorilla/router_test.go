@@ -1,3 +1,4 @@
+//go:build !race
 // +build !race
 
 // SPDX-License-Identifier: Apache-2.0
@@ -12,10 +13,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/logging"
-	"github.com/luraproject/lura/proxy"
-	"github.com/luraproject/lura/router"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/logging"
+	"github.com/badboyd/lura/proxy"
+	"github.com/badboyd/lura/router"
 )
 
 func TestDefaultFactory_ok(t *testing.T) {

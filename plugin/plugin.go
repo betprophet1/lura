@@ -10,7 +10,7 @@ import (
 	"plugin"
 	"strings"
 
-	"github.com/luraproject/lura/config"
+	"github.com/badboyd/lura/config"
 )
 
 // Plugin is the interface of the loaded plugins

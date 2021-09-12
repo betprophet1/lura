@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/luraproject/lura/config"
+	"github.com/badboyd/lura/config"
 )
 
 func BenchmarkNewConcurrentMiddleware_singleNext(b *testing.B) {

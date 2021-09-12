@@ -16,8 +16,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/core"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/core"
 )
 
 // ToHTTPError translates an error into a HTTP status code

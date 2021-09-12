@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/badboyd/lura/logging"
+	"github.com/badboyd/lura/proxy"
+	"github.com/badboyd/lura/router"
+	"github.com/badboyd/lura/router/mux"
 	"github.com/dimfeld/httptreemux"
-	"github.com/luraproject/lura/logging"
-	"github.com/luraproject/lura/proxy"
-	"github.com/luraproject/lura/router"
-	"github.com/luraproject/lura/router/mux"
 )
 
 // DefaultFactory returns a net/http mux router factory with the injected proxy factory and logger

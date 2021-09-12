@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/plugin"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/plugin"
 )
 
 const pluginName = "supu"

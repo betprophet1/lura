@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/proxy"
-	"github.com/luraproject/lura/router"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/proxy"
+	"github.com/badboyd/lura/router"
 )
 
 func TestEndpointHandler_ok(t *testing.T) {

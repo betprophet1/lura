@@ -5,8 +5,8 @@ import (
 	"context"
 	"strings"
 
+	"github.com/badboyd/lura/config"
 	"github.com/devopsfaith/flatmap/tree"
-	"github.com/luraproject/lura/config"
 )
 
 // EntityFormatter formats the response data

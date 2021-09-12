@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/luraproject/lura/config"
+	"github.com/badboyd/lura/config"
 )
 
 func TestNewMergeDataMiddleware_ok(t *testing.T) {

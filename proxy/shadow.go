@@ -4,7 +4,7 @@ package proxy
 import (
 	"context"
 
-	"github.com/luraproject/lura/config"
+	"github.com/badboyd/lura/config"
 )
 
 const (

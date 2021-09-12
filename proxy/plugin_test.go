@@ -1,3 +1,4 @@
+//go:build integration || !race
 // +build integration !race
 
 // SPDX-License-Identifier: Apache-2.0
@@ -8,8 +9,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/luraproject/lura/config"
-	"github.com/luraproject/lura/proxy/plugin"
+	"github.com/badboyd/lura/config"
+	"github.com/badboyd/lura/proxy/plugin"
 )
 
 func TestNewPluginMiddleware(t *testing.T) {
