@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/sd"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/sd"
 )
 
 // Namespace is the key for the dns sd module

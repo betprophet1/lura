@@ -11,9 +11,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/encoding"
-	"github.com/badboyd/lura/proxy"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/encoding"
+	"github.com/betprophet1/lura/proxy"
 )
 
 func TestRender_unknown(t *testing.T) {

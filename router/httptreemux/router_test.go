@@ -13,10 +13,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/logging"
-	"github.com/badboyd/lura/proxy"
-	"github.com/badboyd/lura/router"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/logging"
+	"github.com/betprophet1/lura/proxy"
+	"github.com/betprophet1/lura/router"
 )
 
 func TestDefaultFactory_ok(t *testing.T) {

@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/badboyd/lura/encoding"
+	"github.com/betprophet1/lura/encoding"
 )
 
 const (

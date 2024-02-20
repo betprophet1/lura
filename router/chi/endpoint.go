@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/proxy"
-	"github.com/badboyd/lura/router/mux"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/proxy"
+	"github.com/betprophet1/lura/router/mux"
 	"github.com/go-chi/chi"
 )
 

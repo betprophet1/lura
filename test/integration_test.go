@@ -22,14 +22,14 @@ import (
 
 	"github.com/urfave/negroni"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/logging"
-	"github.com/badboyd/lura/proxy"
-	"github.com/badboyd/lura/router/chi"
-	"github.com/badboyd/lura/router/gin"
-	"github.com/badboyd/lura/router/gorilla"
-	"github.com/badboyd/lura/router/httptreemux"
-	luranegroni "github.com/badboyd/lura/router/negroni"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/logging"
+	"github.com/betprophet1/lura/proxy"
+	"github.com/betprophet1/lura/router/chi"
+	"github.com/betprophet1/lura/router/gin"
+	"github.com/betprophet1/lura/router/gorilla"
+	"github.com/betprophet1/lura/router/httptreemux"
+	luranegroni "github.com/betprophet1/lura/router/negroni"
 )
 
 func TestKrakenD_ginRouter(t *testing.T) {

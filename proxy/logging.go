@@ -5,7 +5,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/badboyd/lura/logging"
+	"github.com/betprophet1/lura/logging"
 )
 
 // NewLoggingMiddleware creates proxy middleware for logging requests and responses

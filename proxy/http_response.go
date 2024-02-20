@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/badboyd/lura/encoding"
+	"github.com/betprophet1/lura/encoding"
 )
 
 // HTTPResponseParser defines how the response is parsed from http.Response to Response object

@@ -5,7 +5,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/badboyd/lura/config"
+	"github.com/betprophet1/lura/config"
 )
 
 func BenchmarkNewRequestBuilderMiddleware(b *testing.B) {

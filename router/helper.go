@@ -4,8 +4,8 @@ package router
 import (
 	"net/http"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/proxy"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/proxy"
 )
 
 func IsValidSequentialEndpoint(endpoint *config.EndpointConfig) bool {

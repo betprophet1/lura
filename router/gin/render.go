@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/encoding"
-	"github.com/badboyd/lura/proxy"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/encoding"
+	"github.com/betprophet1/lura/proxy"
 	"github.com/gin-gonic/gin"
 )
 

@@ -8,9 +8,9 @@ import (
 	"plugin"
 	"strings"
 
-	"github.com/badboyd/lura/logging"
-	luraplugin "github.com/badboyd/lura/plugin"
-	"github.com/badboyd/lura/register"
+	"github.com/betprophet1/lura/logging"
+	luraplugin "github.com/betprophet1/lura/plugin"
+	"github.com/betprophet1/lura/register"
 )
 
 var clientRegister = register.New()

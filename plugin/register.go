@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/badboyd/lura/encoding"
-	"github.com/badboyd/lura/register"
-	"github.com/badboyd/lura/sd"
+	"github.com/betprophet1/lura/encoding"
+	"github.com/betprophet1/lura/register"
+	"github.com/betprophet1/lura/sd"
 )
 
 // REGISTRABLE_VAR is the name to lookup after loading the plugin for the module registering

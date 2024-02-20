@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/badboyd/lura/logging"
+	"github.com/betprophet1/lura/logging"
 )
 
 // DebugHandler creates a dummy handler function, useful for quick integration tests

@@ -8,7 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/badboyd/lura/config"
+	"github.com/betprophet1/lura/config"
 )
 
 // Namespace to be used in extra config

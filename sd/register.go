@@ -2,8 +2,8 @@
 package sd
 
 import (
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/register"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/register"
 )
 
 // RegisterSubscriberFactory registers the received factory
