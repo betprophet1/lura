@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 package sd
 
-import "github.com/badboyd/lura/config"
+import "github.com/betprophet1/lura/config"
 
 // Subscriber keeps the set of backend hosts up to date
 type Subscriber interface {

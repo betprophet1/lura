@@ -14,9 +14,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/encoding"
-	"github.com/badboyd/lura/transport/http/client"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/encoding"
+	"github.com/betprophet1/lura/transport/http/client"
 )
 
 func TestNewHTTPProxy_ok(t *testing.T) {

@@ -5,7 +5,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/badboyd/lura/config"
+	"github.com/betprophet1/lura/config"
 	"github.com/devopsfaith/flatmap/tree"
 )
 

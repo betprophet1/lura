@@ -4,7 +4,7 @@ package proxy
 import (
 	"context"
 
-	"github.com/badboyd/lura/config"
+	"github.com/betprophet1/lura/config"
 )
 
 // NewStaticMiddleware creates proxy middleware for adding static values to the processed responses

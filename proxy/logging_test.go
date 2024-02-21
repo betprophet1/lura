@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/badboyd/lura/logging"
+	"github.com/betprophet1/lura/logging"
 )
 
 func TestNewLoggingMiddleware_multipleNext(t *testing.T) {

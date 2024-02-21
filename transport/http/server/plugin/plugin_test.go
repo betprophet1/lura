@@ -13,8 +13,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/logging"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/logging"
 )
 
 func TestLoadWithLogger(t *testing.T) {

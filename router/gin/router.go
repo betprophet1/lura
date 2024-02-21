@@ -11,10 +11,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/logging"
-	"github.com/badboyd/lura/proxy"
-	"github.com/badboyd/lura/router"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/logging"
+	"github.com/betprophet1/lura/proxy"
+	"github.com/betprophet1/lura/router"
 )
 
 // RunServerFunc is a func that will run the http Server with the given params.

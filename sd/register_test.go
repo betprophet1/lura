@@ -4,7 +4,7 @@ package sd
 import (
 	"testing"
 
-	"github.com/badboyd/lura/config"
+	"github.com/betprophet1/lura/config"
 )
 
 func TestRegisterSubscriberFactory_ok(t *testing.T) {

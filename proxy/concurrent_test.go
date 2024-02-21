@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/badboyd/lura/config"
+	"github.com/betprophet1/lura/config"
 )
 
 func TestNewConcurrentMiddleware_ok(t *testing.T) {

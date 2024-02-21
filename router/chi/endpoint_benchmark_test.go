@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/proxy"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/proxy"
 	"github.com/go-chi/chi"
 )
 

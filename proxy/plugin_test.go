@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/badboyd/lura/config"
-	"github.com/badboyd/lura/proxy/plugin"
+	"github.com/betprophet1/lura/config"
+	"github.com/betprophet1/lura/proxy/plugin"
 )
 
 func TestNewPluginMiddleware(t *testing.T) {
