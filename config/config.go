@@ -56,6 +56,8 @@ type ServiceConfig struct {
 	// Extra configuration for customized behaviour
 	ExtraConfig ExtraConfig `mapstructure:"extra_config"`
 
+	Currency string `mapstructure:"currency"`
+
 	// ReadTimeout is the maximum duration for reading the entire
 	// request, including the body.
 	//

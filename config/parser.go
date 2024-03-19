@@ -133,6 +133,7 @@ type parseableServiceConfig struct {
 	Endpoints             []*parseableEndpointConfig `json:"endpoints"`
 	Timeout               string                     `json:"timeout"`
 	CacheTTL              string                     `json:"cache_ttl"`
+	Currency              string                     `json:"currency"`
 	Host                  []string                   `json:"host"`
 	Port                  int                        `json:"port"`
 	Version               int                        `json:"version"`
@@ -160,6 +161,7 @@ type parseableServiceConfig struct {
 func (p *parseableServiceConfig) normalize() ServiceConfig {
 	cfg := ServiceConfig{
 		Name:                  p.Name,
+		Currency:              p.Currency,
 		Timeout:               parseDuration(p.Timeout),
 		CacheTTL:              parseDuration(p.CacheTTL),
 		Host:                  p.Host,
